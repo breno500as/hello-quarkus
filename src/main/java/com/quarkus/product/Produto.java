@@ -11,15 +11,47 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 public class Produto extends PanacheEntity {
-	
-	public String nome;
-	
-	public BigDecimal valor;
-	
+
+	private String nome;
+
+	private BigDecimal valor;
+
 	@CreationTimestamp
-	public Date dataCriacao;
-	
+	private Date dataCriacao;
+
 	@CreationTimestamp
-	public Date dataAtualizacao;
+	private Date dataAtualizacao;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+
+	public Date getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(Date dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+
+	public Date getDataAtualizacao() {
+		return dataAtualizacao;
+	}
+
+	public void setDataAtualizacao(Date dataAtualizacao) {
+		this.dataAtualizacao = dataAtualizacao;
+	}
 
 }
