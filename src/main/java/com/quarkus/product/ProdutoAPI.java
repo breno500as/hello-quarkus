@@ -14,6 +14,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
 
 @Path("/produtos")
 @Produces(MediaType.APPLICATION_JSON)
@@ -27,11 +30,13 @@ public class ProdutoAPI {
 	
 	@POST
 	@Transactional
-	public void cria(ProdutoDTO produtoDTO) {
+	public Response cria(ProdutoDTO produtoDTO) {
 		Produto p = new Produto();
 		p.setNome(produtoDTO.getNome());
 		p.setValor(produtoDTO.getValor());
-		Produto.persist(p);
+		p.persist();
+		return Response.status(Status.CREATED).build();
+	
 	}
 	
 	@PUT
@@ -44,7 +49,7 @@ public class ProdutoAPI {
 			Produto p = optional.get();
 			p.setNome(produtoDTO.getNome());
 			p.setValor(produtoDTO.getValor());
-			Produto.persist(p);
+			p.persist();
 		} else {
 			 throw new NotFoundException();
 		} 
