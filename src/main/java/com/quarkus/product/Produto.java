@@ -3,24 +3,21 @@ package com.quarkus.product;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.persistence.Entity;
-
-import org.hibernate.annotations.CreationTimestamp;
-
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
-
-@Entity
-public class Produto extends PanacheEntity {
+public class Produto {
 
 	private String nome;
 
 	private BigDecimal valor;
 
-	@CreationTimestamp
 	private Date dataCriacao;
 
-	@CreationTimestamp
 	private Date dataAtualizacao;
+
+	public Produto(String nome, BigDecimal valor) {
+		super();
+		this.nome = nome;
+		this.valor = valor;
+	}
 
 	public String getNome() {
 		return nome;

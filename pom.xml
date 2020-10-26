@@ -5,20 +5,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.acme</groupId>
-	<artifactId>code-with-quarkus</artifactId>
+	<artifactId>kubernetes-quarkus</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<surefire-plugin.version>2.22.1</surefire-plugin.version>
 		<maven.compiler.target>11</maven.compiler.target>
-		<quarkus.platform.version>1.8.3.Final</quarkus.platform.version>
+		<quarkus.platform.version>1.9.0.Final</quarkus.platform.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.parameters>true</maven.compiler.parameters>
-		<quarkus-plugin.version>1.8.3.Final</quarkus-plugin.version>
+		<quarkus-plugin.version>1.9.0.Final</quarkus-plugin.version>
 		<compiler-plugin.version>3.8.1</compiler-plugin.version>
 		<quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
+		<org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -56,39 +57,12 @@
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
-			<artifactId>quarkus-hibernate-orm-panache</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.quarkus</groupId>
-			<artifactId>quarkus-jdbc-postgresql</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-resteasy-jsonb</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-smallrye-health</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>1.14.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.github.database-rider</groupId>
-			<artifactId>rider-cdi</artifactId>
-			<version>1.16.1</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/stax/stax -->
-		<dependency>
-			<groupId>stax</groupId>
-			<artifactId>stax</artifactId>
-			<version>1.2.0</version>
-		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
